@@ -5,8 +5,10 @@
 
 .container {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 30px;
-  flex-wrap: wrap;
+  flex-direction: column; /* Coloca o Header em cima e o Main embaixo */
+  align-items: center;    /* Centraliza o conteúdo horizontalmente */
+  width: 100%;
+  min-height: 100vh;      /* OBRIGATÓRIO para a cor preencher a tela toda */
+  margin: 0;             /* Remova o margin-top daqui para não sobrar branco no topo */
+  padding-top: 30px;      /* Use padding no lugar de margin para manter a cor no topo */
 }

@@ -1,76 +1,63 @@
-# 🎮 Sonic Character Selection – React
-![Animação2](https://github.com/user-attachments/assets/160428bb-5c2e-43cc-be42-5701c45eab62)
+🌀 Sonic Battle - React Selection
+![Demonstração do Projeto](./screenshots/demonstracao.gif)
+Este projeto é um estudo prático de React.js. A ideia central foi inspirada em um projeto de curso (originalmente em HTML, CSS e JS puro), mas decidi reconstruí-lo do zero utilizando React para praticar a lógica de componentes e estados.
 
-Projeto pessoal de **seleção de personagens**, inspirado em telas clássicas de jogos de luta, ambientado no universo do **Sonic**.
+O objetivo é criar uma tela de seleção de lutadores para o universo Sonic Battle, focando em organização de código e interface dinâmica.
 
-Este projeto foi desenvolvido como uma **evolução de um exercício de curso**, que originalmente utilizava apenas **HTML, CSS e JavaScript**, e aqui foi **reimplementado do zero em React**, com melhorias de estrutura, organização e experiência do usuário.
+🚀 O que eu pratiquei neste projeto?
+Como estou em processo de aprendizado, foquei em aplicar conceitos que estou estudando no momento:
 
----
+Componentização: Dividi a interface em partes menores e reutilizáveis (como CharacterCard e CharacterInfo).
 
-## 🚀 Tecnologias utilizadas
+Estado (useState): Gerenciamento de qual personagem está selecionado para atualizar a tela em tempo real.
 
-* React
-* JavaScript (ES6+)
-* HTML5
-* CSS3
-* Hooks (`useState`)
-* Componentização
-* Responsividade
-* Manipulação de áudio
+Props: Passagem de informações entre componentes pai e filho.
 
----
+CSS Dinâmico: O fundo da tela e as bordas mudam de cor automaticamente de acordo com o "DNA" (cor tema) de cada personagem.
 
-## 🧩 Funcionalidades
+Tratamento de Áudio: Implementação de sons para cada personagem com tratamento de erros para navegadores.
 
-* Seleção de personagens por ícones
-* Destaque visual do personagem selecionado
-* Exibição da imagem principal e nome do personagem
-* Reprodução de áudio ao selecionar um personagem
-* Botão de controle de som (ligar/desligar)
-* Layout responsivo para desktop e mobile
-* Interface inspirada em jogos de luta
+🛠️ Tecnologias Utilizadas
+React.js (Vite)
 
----
+JavaScript (ES6+)
 
-## 🎯 Objetivo do projeto
+CSS3 (Variáveis CSS e Flexbox)
 
-O objetivo deste projeto foi:
+🧠 Ferramentas de Apoio
+IA (Inteligência Artificial): Utilizei IA como uma ferramenta de mentoria e auxílio técnico para:
 
-* Praticar **React na prática**
-* Trabalhar **props, estado e componentes**
-* Evoluir um exercício simples para um **projeto de portfólio**
-* Explorar interação com o usuário (cliques, áudio e feedback visual)
-* Criar uma interface com “game feel”
+Refatoração: Auxílio na migração da lógica de HTML/JS puro para a arquitetura de componentes do React.
 
----
+Arquitetura: Orientação na organização de pastas e separação de responsabilidades (Pages, Components e Data).
 
-## 🧠 Aprendizados
+Debug: Resolução de erros de compilação e conflitos de nomes de arquivos no sistema operacional.
 
-Durante o desenvolvimento, foram praticados conceitos importantes como:
+📂 Organização do Projeto
+Decidi organizar as pastas de forma profissional para facilitar a manutenção:
 
-* Organização de componentes
-* Passagem de dados via props
-* Controle de estado
-* Estruturação de layout com Flexbox e Grid
-* Resolução de problemas de responsividade
-* Atenção à experiência do usuário
+src/components: Componentes pequenos e reutilizáveis.
 
----
+src/pages: Estrutura das páginas principais (Home).
 
-## 📌 Observações
+src/data: Onde ficam todas as informações e atributos dos personagens.
 
-* As imagens e áudios foram utilizados apenas para **fins educacionais e demonstrativos**
-* Projeto sem fins comerciais
-* Parte do desenvolvimento contou com **apoio de IA como ferramenta de aprendizado**, mantendo o entendimento e adaptação do código pelo autor
+src/assets: Organização de imagens, ícones e sons.
 
----
+🎓 Evolução Constante
+Este projeto faz parte do meu aprendizado. Migrar a lógica de um site estático para uma biblioteca moderna como o React me ajudou a entender como os dados fluem em uma aplicação real.
 
-## 👤 Autor
+Próximos passos:
 
-**Felipe**
-Desenvolvedor Front-end em formação
-Projeto desenvolvido para fins de estudo e portfólio
+[ ] Adicionar sistema de "Golpes Especiais" (Stats detalhados).
 
----
+[ ] Criar uma tela de "Start" antes da seleção.
 
-⭐ Se você curtiu o projeto, sinta-se à vontade para explorar o código!
+[ ] Melhorar a responsividade para dispositivos móveis.
+
+Como rodar o projeto localmente:
+Clone o repositório.
+
+No terminal, use: npm install.
+
+Para iniciar o servidor de desenvolvimento, use: npm run dev.

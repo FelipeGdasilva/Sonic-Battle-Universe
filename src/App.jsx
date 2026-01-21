@@ -1,69 +1,30 @@
-
-import { useState } from "react";
-import characters from "./data/characters";
-import Character from "./components/Character";
-import "./App.css";
-import "./styles/layout.css";
-import "./styles/components.css";
-import "./styles/responsive.css";
-
+import { useState } from 'react';
+import { personagens } from './data/data';
+import Home from './pages/Home';
+import './styles/components.css';
+import './styles/layout.css';
+import './styles/responsive.css';
+import './App.css';
 
 function App() {
-  const [selected, setSelected] = useState(null);
-  const [soundOn, setSoundOn] = useState(true)
+  const [selecionado, setSelecionado] = useState(null);
+  const [mute, setMute] = useState(false);
 
-  function handleSelect(character) {
-    setSelected(character);
-
-    if (! soundOn || !character.sound)
-    return;
-
-    const audio = new Audio(character.sound);
-    audio.volume = 0.5;
-    audio.play().catch(() =>{});
-  }
+  const handleSelect = (p) => {
+    setSelecionado(p);
+    if (!mute && p.som) {
+      new Audio(p.som).play().catch(e => console.log(e));
+    }
+  };
 
   return (
-    <div className="app">
-
-      <header className="top-bar">
-      <h1>Seleção de Personagens</h1>
-
-      <button className="sound-toggle" onClick={() => setSoundOn(!soundOn)}>
-        {soundOn ? "🔊" : " 🔈 "}
-      </button>
-</header>
-      <div className="container">
-        <ul className="list">
-          {characters.map((char) => (
-            <Character
-              key={char.id}
-              character={char}
-              isSelected={selected?.id === char.id}
-              onSelect={handleSelect}
-            />
-          ))}
-        </ul>
-
-        <div className="info">
-          {selected ? (
-            <>
-            <div className="preview">
-            <img
-            src={selected.image}
-            alt={selected.name}
-            className="big-image"
-            />
-              <h2>{selected.name}</h2>
-             </div>
-            </>
-          ) : (
-            <p>Selecione um personagem</p>
-          )}
-        </div>
-      </div>
-    </div>
+    <Home 
+      personagens={personagens}
+      selecionado={selecionado}
+      handleSelect={handleSelect}
+      mute={mute}
+      setMute={setMute}
+    />
   );
 }
-
 export default App;

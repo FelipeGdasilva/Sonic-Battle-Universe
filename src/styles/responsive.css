@@ -1,13 +1,34 @@
-@media (max-width: 768px ) {
-    .conteiner{
-        flex-direction: column;
+@media (max-width: 768px) {
+    /* O container principal continua como coluna (header -> main) */
+    .container {
+        padding: 10px;
     }
 
-    .list{
-        grid-template-columns: repeat(2, 1fr);
+    /* O SEGREDO: O main é que precisa virar coluna no celular */
+    main {
+        flex-direction: column !important; /* Coloca a lista em cima e o info embaixo */
+        gap: 20px !important;
+        align-items: center;
     }
 
-    .big-image{
-        max-height: 40vh;
+    /* Ajusta a lista para ocupar a largura toda no celular */
+    .list {
+        grid-template-columns: repeat(3, 1fr); /* 3 ícones por linha fica bom no mobile */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .info {
+        width: 100%; /* Quadro de informações ocupa a largura toda */
+        min-height: auto;
+    }
+
+    .big-image {
+        max-height: 35vh; /* Diminui um pouco mais para não precisar de muito scroll */
+    }
+
+    /* Ajuste para o botão de som não sumir ou atrapalhar o título */
+    .top-bar h1 {
+        font-size: 1.5rem;
     }
 }

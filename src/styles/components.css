@@ -7,21 +7,54 @@
 }
 
 .character {
-  background: #123;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05); /* Um fundo bem clarinho */
+  border: 2px solid #333;               /* Borda padrão escura */
+  border-radius: 15px;                  /* O segredo das bordas redondas */
+  padding: 10px;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;            /* Deixa o movimento suave */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;                         /* Ajuste o tamanho se precisar */
 }
 
-.character:hover {
+/* Cor do nome do personagem selecionado */
+.character-name {
+  color: var(--cor-tema);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 5px 0;
+  text-shadow: 1px 1px 0px #000;
+}
+
+/* Fundo da barra de status */
+.status-bar-bg {
+  background: #333;
+  height: 12px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  overflow: hidden;
+}
+
+/* Estilo para o item da lista quando selecionado */
+.character.selected {
+  border: 3px solid var(--cor-tema) !important; /* Borda da cor do personagem */
+  box-shadow: 0 0 20px var(--cor-tema);         /* Brilho externo (Glow) */
+  background: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
 }
 
-.selected {
-  border: 3px solid #00bfff;
-  box-shadow: 0 0 15px #00bfff;
+.character:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #666;
+}
+
+.character img {
+  border-radius: 10px; /* Arredonda um pouco a imagem também */
+  margin-bottom: 5px;
 }
 
 .info {
@@ -49,40 +82,42 @@
 }
 
 .top-bar {
-  position: relative;
+  display: flex;
+  justify-content: center; /* Mantém o H1 no centro */
+  align-items: center;
+  position: relative; /* Isso é o segredo */
+  width: 100%;
+}
+
+.sound-toggle {
+  position: absolute;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+  color: white;
+  border: 2px solid var(--cor-tema, #00bfff); /* Borda segue a cor do personagem! */
+  border-radius: 50%; /* Deixa ele redondinho */
+  width: 50px;       /* Tamanho maior */
+  height: 50px;      /* Tamanho maior */
+  font-size: 1.5rem; /* Emoji ou ícone maior */
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-}
-
-.top-bar h1 {
-  margin: 0;
-  text-align: center;
-}
-
-.sound-toggle{
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: #ffff;
-  font-size: 1. 3rem;
-  padding: 8px 12px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease,background 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação com "mola" */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
 .sound-toggle:hover {
-  background: #00bfff;
+  transform: scale(1.15) rotate(5deg); /* Aumenta e dá uma leve giradinha */
+  background: var(--cor-tema, #00bfff);
   color: #000;
-  transform: scale(1.1);
-  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px var(--cor-tema, #00bfff); /* Brilha ao passar o mouse */
 }
 
+.sound-toggle:active {
+  transform: scale(0.9); /* Efeito de clique */
+}
 @keyframes appear {
   from{
     opacity: 0;
