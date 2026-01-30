@@ -9,7 +9,7 @@ export default function Home({ personagens, selecionado, handleSelect, mute, set
       minHeight: '100vh' 
     }}>
       <header className="top-bar">
-        <h1>Sonic Battle React</h1>
+        <h1>Sonic Battle Universe</h1>
         <button className="sound-toggle" onClick={() => setMute(!mute)}>
           {mute ? '🔈' : '🔊'}
         </button>

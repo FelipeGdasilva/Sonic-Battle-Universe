@@ -125,7 +125,7 @@ export const personagens = [
   },
   {
     id: 'creme',
-    nome: 'Creme The Chao',
+    nome: 'Creme The Rabbit',
     imagem: creamImg,
     icone: creamIcon,
     som: creamSnd,
