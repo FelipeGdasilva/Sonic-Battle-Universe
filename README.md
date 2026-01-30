@@ -1,4 +1,4 @@
-🌀 Sonic Battle Universe
+🌀 Sonic Battle Univers
 ![Demonstração do Projeto](./screenshots/demonstracao.gif)
 Este projeto é um estudo prático de React.js. A ideia central foi inspirada em um projeto de curso (originalmente em HTML, CSS e JS puro), mas decidi reconstruí-lo do zero utilizando React para praticar a lógica de componentes e estados.
 
