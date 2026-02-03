@@ -5,7 +5,7 @@
  # 🎮 Sonic Battle Universe
 
 <p align="center">
-  ![demonstracao](screenshots/demonstracao.gif)
+  <img src="./screenshots/demonstracao.gif" alt ="Demostração do sonic Battle Universe">
 
 </p>
 
