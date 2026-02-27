@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from '../App';
 
@@ -17,4 +17,17 @@ describe('Home / Character List', () => {
     const sonicElements = screen.getAllByText(/Sonic/i);
     expect(sonicElements.length).toBeGreaterThanOrEqual(1);
   });
-});
+   test('deve alterar o personagem exibido ao clicar no card', () => {
+    render(<App />);
+
+    // 1. ORGANIZAR: Achamos o card do Sonic
+    // Usamos getAll para garantir que pegamos o card e clicamos no primeiro
+    const sonicCards = screen.getAllByText(/Sonic/i);
+    
+    // 2. AGIR: Simular o clique no card
+    fireEvent.click(sonicCards[0]);
+
+    // 3. O .toBeInTheDocument() confirma que o clique funcionou e mudou a tela
+    expect(screen.getByText(/Sonic The Hedgehog/i)).toBeInTheDocument();
+  });
+}); 
