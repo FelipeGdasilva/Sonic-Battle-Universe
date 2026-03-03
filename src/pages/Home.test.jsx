@@ -4,6 +4,8 @@ import App from '../App';
 
  window.HTMLMediaElement.prototype.play = () => { return Promise.resolve(); };
 
+
+
 describe('Home / Character List', () => {
   
   test('deve renderizar o título e pelo menos um personagem', () => {
@@ -40,7 +42,11 @@ describe('Home / Character List', () => {
 
   // Agora que o clique passou, verificamos o nome completo
     const shadowApareceu = screen.getAllByText(/shadow/i);
+<<<<<<< HEAD
     expect(shadowApareceu.length).toBeGreaterThanOrEqual(1);
+=======
+    expect(shadowApareceu.length).toBeGreaterThanOrEqual(1)
+>>>>>>> 3d7277fb3c86c682dbc1ab8dcd9d045eb66bd28f
 });
 
 test ('deve trocar o shadow pelo supersonic', () => {
@@ -48,7 +54,11 @@ test ('deve trocar o shadow pelo supersonic', () => {
   const superSonicCards = screen.getAllByText(/super sonic/i);
   fireEvent.click(superSonicCards[0]);
   const superSonicApareceu = screen.getAllByText(/super sonic/i);
+<<<<<<< HEAD
   expect(superSonicApareceu.length).toBeGreaterThanOrEqual(1);
+=======
+  expect(superSonicApareceu.length).toBeGreaterThanOrEqual(1)
+>>>>>>> 3d7277fb3c86c682dbc1ab8dcd9d045eb66bd28f
 }); 
 
 });
