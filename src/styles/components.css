@@ -6,21 +6,40 @@
   gap: 20px;
 }
 
+
 .character {
-  background: rgba(255, 255, 255, 0.05); /* Um fundo bem clarinho */
-  border: 2px solid #333;               /* Borda padrão escura */
-  border-radius: 15px;                  /* O segredo das bordas redondas */
-  padding: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;            /* Deixa o movimento suave */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100px;                         /* Ajuste o tamanho se precisar */
+  width: 100px;
+  padding: 10px;
+  background: var(--bg-card);
+  border: var(--borda-padrao);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: var(--transicao-padrao);
 }
 
-/* Cor do nome do personagem selecionado */
+.character:hover {
+  transform: scale(1.1);
+  background: var(--bg-card-hover);
+  border-color: #666;
+}
+
+
+.list .character.selected {
+  border: 3px solid var(--cor-tema);
+  box-shadow: 0 0 20px var(--cor-tema);
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.character img {
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
 .character-name {
   color: var(--cor-tema);
   text-transform: uppercase;
@@ -29,7 +48,27 @@
   text-shadow: 1px 1px 0px #000;
 }
 
-/* Fundo da barra de status */
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.big-image {
+  max-height: 60vh;
+  width: auto;
+  margin-bottom: 10px;
+  animation: appear 0.4s ease;
+  transition: transform 0.3s ease; 
+}
+
+.preview:hover .big-image {
+  transform: scale(1.05);
+}
+
 .status-bar-bg {
   background: #333;
   height: 12px;
@@ -38,92 +77,52 @@
   overflow: hidden;
 }
 
-/* Estilo para o item da lista quando selecionado */
-.character.selected {
-  border: 3px solid var(--cor-tema) !important; /* Borda da cor do personagem */
-  box-shadow: 0 0 20px var(--cor-tema);         /* Brilho externo (Glow) */
-  background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
-}
-
-.character:hover {
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #666;
-}
-
-.character img {
-  border-radius: 10px; /* Arredonda um pouco a imagem também */
-  margin-bottom: 5px;
-}
-
-.info {
-  max-width: 300px;
-}
-
-.preview{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.preview:hover .big-image{
-  transform: scale(1.05);
-  transition: transform 0,3s e;
-}
-
-.big-image{
-  max-height: 60vh;
-  width: auto;
-  margin-bottom: 10px;
-  animation: appear 0.4s ease;
-}
 
 .top-bar {
   display: flex;
-  justify-content: center; /* Mantém o H1 no centro */
+  justify-content: center;
   align-items: center;
-  position: relative; /* Isso é o segredo */
+  position: relative;
   width: 100%;
 }
 
 .sound-toggle {
   position: absolute;
   right: 20px;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
-  color: white;
-  border: 2px solid var(--cor-tema, #00bfff); /* Borda segue a cor do personagem! */
-  border-radius: 50%; /* Deixa ele redondinho */
-  width: 50px;       /* Tamanho maior */
-  height: 50px;      /* Tamanho maior */
-  font-size: 1.5rem; /* Emoji ou ícone maior */
-  cursor: pointer;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação com "mola" */
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 2px solid var(--cor-tema);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 100;
 }
 
 .sound-toggle:hover {
-  transform: scale(1.15) rotate(5deg); /* Aumenta e dá uma leve giradinha */
-  background: var(--cor-tema, #00bfff);
+  transform: scale(1.15) rotate(5deg);
+  background: var(--cor-tema);
   color: #000;
-  box-shadow: 0 0 20px var(--cor-tema, #00bfff); /* Brilha ao passar o mouse */
+  box-shadow: 0 0 20px var(--cor-tema);
 }
 
 .sound-toggle:active {
-  transform: scale(0.9); /* Efeito de clique */
+  transform: scale(0.9);
 }
+
+
 @keyframes appear {
-  from{
+  from {
     opacity: 0;
-    transform: scale(0,9);
+    transform: scale(0.9);
   }
-  to{
+  to {
     opacity: 1;
     transform: scale(1);
   }

@@ -2,12 +2,12 @@ import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { CharacterCard } from './CharacterCard';
 
-// Criamos um personagem de teste (Mock)
+
 const mockPersonagem = {
   id: 'sonic',
   nome: 'Sonic The Hedgehog',
-  icone: 'sonic-icon.png', // Pode ser qualquer texto
-  som: 'sonic-sound.mp3',   // Adicionei aqui para ficar igual ao seu characters.js
+  icone: 'sonic-icon.png', 
+  som: 'sonic-sound.mp3',   
   corTema: '#0054FF'
 };
 describe('Testes do Componente CharacterCard', () => {
@@ -20,7 +20,7 @@ describe('Testes do Componente CharacterCard', () => {
   });
 
   test('deve chamar a função onSelect quando o card for clicado', () => {
-    const onSelectSpy = jest.fn(); // "Espião" para saber se a função foi chamada
+    const onSelectSpy = jest.fn(); 
     render(<CharacterCard personagem={mockPersonagem} onSelect={onSelectSpy} />);
     
     const card = screen.getByRole('listitem');
@@ -33,7 +33,7 @@ describe('Testes do Componente CharacterCard', () => {
     render(
       <CharacterCard 
         personagem={mockPersonagem} 
-        selecionado={mockPersonagem} // Passamos o mesmo personagem como selecionado
+        selecionado={mockPersonagem} 
         onSelect={() => {}} 
       />
     );

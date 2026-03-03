@@ -1,14 +1,32 @@
+:root {
+  --cor-tema: #00bfff;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.1);
+  --transicao-padrao: all 0.3s ease;
+  --borda-padrao: 2px solid #333; 
+  --cor-fundo: #0a0a0a; 
+  --padding-padrao: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-fundo); 
+  color: white; 
+  font-family: sans-serif; 
+  min-height: 100vh;
+}
+
 .app {
   text-align: center;
-  padding: 20px;
+  padding: var(--padding-padrao);
 }
 
 .container {
   display: flex;
-  flex-direction: column; /* Coloca o Header em cima e o Main embaixo */
-  align-items: center;    /* Centraliza o conteúdo horizontalmente */
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  min-height: 100vh;      /* OBRIGATÓRIO para a cor preencher a tela toda */
-  margin: 0;             /* Remova o margin-top daqui para não sobrar branco no topo */
-  padding-top: 30px;      /* Use padding no lugar de margin para manter a cor no topo */
+  padding-top: 30px;
 }
+

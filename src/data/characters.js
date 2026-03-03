@@ -26,6 +26,8 @@ import superSonicImg from '../assets/images/supersonic.png';
 import superSonicIcon from '../assets/icons/supersonic-icon.png';
 import superSonicSnd from '../assets/sounds/supersonic.mp3';
 
+
+
 export const personagens = [
   {
     id: 'sonic',
@@ -35,9 +37,9 @@ export const personagens = [
     som: sonicSnd,
     corTema: '#0054FF',
     stats: [
-    { label: 'Speed', value: 100 },
-    { label: 'Agility', value: 80 }
-  ]
+      { label: 'Speed', value: 100 },
+      { label: 'Agility', value: 80 }
+    ]
   },
   {
     id: 'shadow',
@@ -47,21 +49,21 @@ export const personagens = [
     som: shadowSnd,
     corTema: '#222222',
     stats: [
-    { label: 'Speed', value: 90 },
-    { label: 'Chaos Control', value: 100 }
-  ]
+      { label: 'Speed', value: 90 },
+      { label: 'Chaos Control', value: 100 }
+    ]
   },
   {
     id: 'tails',
-    nome: 'miles tails prower',
+    nome: 'Miles Tails Prower', 
     imagem: tailsImg,
-    icone:tailsIcon,
+    icone: tailsIcon,
     som: tailsSnd,
     corTema: '#FFB000',
     stats: [
-    { label: 'Speed', value: 80 },
-    { label: 'Flight', value: 100 }
-  ],
+      { label: 'Speed', value: 80 },
+      { label: 'Flight', value: 100 }
+    ],
   },
   {
     id: 'knuckles',
@@ -71,9 +73,9 @@ export const personagens = [
     som: knucklesSnd,
     corTema: '#FF0000',
     stats: [
-    { label: 'Strength', value: 100 },
-    { label: 'Speed', value: 80 }
-  ]
+      { label: 'Strength', value: 100 },
+      { label: 'Speed', value: 80 }
+    ]
   },
   {
     id: 'supersonic',
@@ -83,57 +85,56 @@ export const personagens = [
     som: superSonicSnd,
     corTema: '#FFE600',
     stats: [
-    { label: 'Speed', value: 100 },
-    { label: 'Invincibility', value: 100 }
-  ]
+      { label: 'Speed', value: 100 },
+      { label: 'Invincibility', value: 100 }
+    ]
   },
   {
     id: 'amy',
-    nome: 'amy rose',
+    nome: 'Amy Rose',
     imagem: amyImg,
     icone: amyIcon,
     som: amySnd,
     corTema: '#FF66B2',
-   stats: [
-    { label: 'Speed', value: 70 },
-    { label: 'Hammer Skill', value: 100 }
-  ]
+    stats: [
+      { label: 'Speed', value: 70 },
+      { label: 'Hammer Skill', value: 100 }
+    ]
   },
   {
     id: 'eggman',
-    nome: 'dr.eggman',
+    nome: 'Dr. Eggman', 
     imagem: eggmanImg,
     icone: eggmanIcon,
     som: eggmanSnd,
-    corTema: '#FFD700',
-   stats: [
-    { label: 'Intelligence', value: 100 },
-    { label: 'Technology', value: 95 }
-  ]
+    corTema:'#8B0000',
+    stats: [
+      { label: 'Intelligence', value: 100 },
+      { label: 'Technology', value: 95 }
+    ]
   },
   {
     id: 'rouge',
-    nome: 'rouege the bat',
+    nome: 'Rouge The Bat', 
     imagem: rougeImg,
     icone: rougeIcon,
     som: rougeSnd,
     corTema: '#A020F0',
     stats: [
-    { label: 'Agility', value: 85 },
-    { label: 'Stealth', value: 90 }
-  ]
+      { label: 'Agility', value: 85 },
+      { label: 'Stealth', value: 90 }
+    ]
   },
   {
     id: 'creme',
-    nome: 'Creme The Rabbit',
+    nome: 'Cream The Rabbit', 
     imagem: creamImg,
     icone: creamIcon,
     som: creamSnd,
     corTema: '#F5DEB3',
     stats: [
-    { label: 'Cuteness', value: 100 },
-    { label: 'Friendliness', value: 95 }
-  ]
+      { label: 'Cuteness', value: 100 },
+      { label: 'Friendliness', value: 95 }
+    ]
   },
-
 ];

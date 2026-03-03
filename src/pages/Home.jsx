@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { CharacterCard } from '../components/CharacterCard';
 import { CharacterInfo } from '../components/CharacterInfo';
 
@@ -14,7 +13,7 @@ export default function Home({ personagens, selecionado, handleSelect, mute, set
           {mute ? '🔈' : '🔊'}
         </button>
       </header>
-
+    
       <main style={{ display: 'flex', gap: '40px', padding: '20px' }}>
         <ul className="list">
           {personagens.map((p) => (
