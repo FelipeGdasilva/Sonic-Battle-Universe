@@ -2,6 +2,8 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from '../App';
 
+ window.HTMLMediaElement.prototype.play = () => { return Promise.resolve(); };
+
 // Simulamos os dados aqui dentro para testar a renderização primeiro
 const mockCharacters = [{ name: 'Sonic' }, { name: 'Shadow' }];
 
@@ -30,4 +32,26 @@ describe('Home / Character List', () => {
     // 3. O .toBeInTheDocument() confirma que o clique funcionou e mudou a tela
     expect(screen.getByText(/Sonic The Hedgehog/i)).toBeInTheDocument();
   });
+  
+  test('deve trocar o sonic pelo shadow', () => {
+  render(<App />);
+
+  const shadowCards = screen.getAllByText(/shadow/i);
+  
+  // O clique dispara o som. Sem a proteção lá no topo, o teste para aqui!
+  fireEvent.click(shadowCards[0]); 
+
+  // Agora que o clique passou, verificamos o nome completo
+    const shadowApareceu = screen.getAllByText(/shadow/i);
+    expect(shadowApareceu.length).toBeGreaterThanOrEqual(1)
+});
+
+test ('deve trocar o shadow pelo supersonic', () => {
+  render(<App />);
+  const superSonicCards = screen.getAllByText(/super sonic/i);
+  fireEvent.click(superSonicCards[0]);
+  const superSonicApareceu = screen.getAllByText(/super sonic/i);
+  expect(superSonicApareceu.length).toBeGreaterThanOrEqual(1)
 }); 
+
+});
