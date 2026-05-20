@@ -13,6 +13,7 @@ export function CharacterCard({ personagem, selecionado, onSelect }) {
         alt={personagem.nome} 
         style={{ width: '80px' }} 
         />
+        <p>{personagem.nome}</p>
   </li>
   );
 }
