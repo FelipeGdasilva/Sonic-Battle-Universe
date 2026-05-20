@@ -7,12 +7,12 @@ export function CharacterCard({ personagem, selecionado, onSelect }) {
       className={`character ${isSelected ? 'selected' : ''}`}
       style={{ '--cor-tema': personagem.corTema }}
     >
+
       <img 
         src={personagem.icone} 
         alt={personagem.nome} 
         style={{ width: '80px' }} 
-      />
-      <p>{personagem.nome}</p>
-    </li>
+        />
+  </li>
   );
 }
