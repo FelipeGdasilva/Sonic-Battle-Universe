@@ -53,18 +53,24 @@ Nesta nova versão, o foco foi sair de um layout estático para uma experiência
 - **Vite** (Build tool rápida)
 
 ---
+## 💻 Como Rodar o Projeto Localmente
 
-## 💻 Como rodar o projeto localmente
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/FelipeGdasilva/Sonic-Battle-Universe.git
+   cd Sonic-Battle-Universe
+   ```
 
-```bash
-# 1. Clone o repositório
-git clone [https://github.com/FelipeGdasilva/Sonic-Battle-Universe.git](https://github.com/FelipeGdasilva/Sonic-Battle-Universe.git)
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-# 2. Acesse a pasta do projeto e instale as dependências
-cd Sonic-Battle-Universe
-npm install
+3. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-# 3. Execute o projeto em modo de desenvolvimento
-npm run dev
+
 
 
